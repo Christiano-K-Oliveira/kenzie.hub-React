@@ -1,0 +1,18 @@
+.link_register_page_login{
+    text-decoration: none;
+    color: var(--grey-0);
+    font-weight: 500;
+    font-size: var(--font-size-4);
+    color: var(--grey-0);
+    background-color: var(--grey-1);
+    border-radius: var(--border-radius-1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    transition: 0.2s ease;
+}
+.link_register_page_login:hover{
+    background-color: var(--grey-2);
+    transition: 0.2s ease;
+}
