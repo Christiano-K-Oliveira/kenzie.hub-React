@@ -5,65 +5,17 @@ import Button from "../../components/buttonForm/index.jsx"
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from "react-hook-form";
-import api from "../../services/api"
 import { Formulario, LogoFigure, LogoImg, Main } from '../Login/style'
 import { DivHeader, SelectRegister, SpanError, SpanRegister, TitleRegister } from './style'
 import ButtonExit from '../../components/buttonExit'
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../providers/context';
+import { useContext } from 'react';
 
 
 
-const RegisterPage = () => {
+const RegisterPage = () => { 
 
-    const navigate = useNavigate()
-
-    async function registerUser(data){
-        
-        if(errors.message === undefined){
-            const newData = {
-                email: data.email,
-                password: data.password,
-                name: data.name,
-                bio: data.bio,
-                contact: data.contact,
-                course_module: data.course_module
-            }
-
-            try{
-                await api.post('users', newData).then(() => {
-                    toast.success('Conta criada com sucesso!', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                    })
-                })
-
-                setTimeout(() => {
-                    navigate('/')
-                }, 6000)
-            }
-            catch (err) {
-                console.log(err)
-                
-                toast.error('Ops! Algo deu errado', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                })
-            }
-        }
-    }
+    const { registerUser } = useContext(UserContext)
 
     const formSchema = yup.object({
         name: yup.string().required('Nome obrigatório').min(3, 'Mínimo de 3 caracteres'),

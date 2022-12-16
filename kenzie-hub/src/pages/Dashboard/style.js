@@ -41,6 +41,10 @@ const DivWelcome = styled.div`
 
     @media(max-width: 800px){
         width: 90%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
     }
 `
 
@@ -60,7 +64,7 @@ const SectionInfo = styled.section`
     max-width: 60%;
     display: flex;
     flex-direction: column;
-    margin-top: 3%;
+    margin-top: 2%;
 
     @media(max-width: 800px){
         max-width: 90%;
@@ -69,14 +73,75 @@ const SectionInfo = styled.section`
 
 const TitleInfo = styled.h2`
     color: var(--grey-0);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-4);
+    font-weight: 600;
+`
+
+const DivInfo = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+const ButtonAdd = styled.button`
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-1);
+    background-color: var(--grey-3);
+    border: none;
+    transition: 0.2s ease;
+
+    :hover{
+        background-color: var(--grey-2);
+        transition: 0.2s ease;
+    }
+`
+
+const ListTech = styled.ul`
+    border: none;
+    width: 100%;
+    border-radius: var(--border-radius-1);
+    background-color: var(--grey-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 3%;
+    padding: 20px 0;
+    gap: 15px;
+`
+
+const ItemTech = styled.li`
+    width: 93%;
+    height: 45px;
+    border-radius: var(--border-radius-1);
+    background-color: var(--grey-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    transition: 0.2s ease;
+    color: var(--grey-1);
+
+    :hover{
+        background-color: var(--grey-2);
+        cursor: pointer;
+        transition: 0.2s ease;
+        color: var(--grey-0);
+    }
+`
+
+const TitleTech = styled.h3`
+    color: var(--grey-0);
+    font-size: var(--font-size-5);
     font-weight: 700;
 `
 
-const ParagraphInfo = styled.p`
-    color: var(--grey-0);
-    font-size: var(--font-size-4);
-    margin-top: 3%;
+const SpanLevel = styled.span`
+    font-size: var(--font-size-6);
+    transition: 0.2s ease;
 `
 
-export { HeaderDash, DivHeader, Main, SectionWelcome, DivWelcome, TitleWelcome, SpanWelcome, SectionInfo, TitleInfo, ParagraphInfo }
+export { HeaderDash, DivHeader, Main, SectionWelcome, DivWelcome, TitleWelcome, SpanWelcome, SectionInfo, TitleInfo, DivInfo, ButtonAdd }
+export { ListTech, ItemTech, TitleTech, SpanLevel }
